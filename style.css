@@ -1,0 +1,70 @@
+body {
+    background-repeat: repeat;
+    background-image: url("mysite/mysite/src/cosmic_bg.jpeg");
+    cursor: url("mysite/mysite/src/cursor.png"), pointer;
+  }
+  h1 {
+    color: rgb(34, 34, 254);
+  }
+  p {
+    color: rgb(208, 197, 144);
+  }
+
+header {
+    background-color:rgb(from background-color 25 -25 25)
+}
+
+.main-wrapper {
+  border: 3px solid whitesmoke;
+  position: relative;
+  margin: 10px;
+  overflow: hidden; /* add this to contain floated children */
+}
+
+.left-panel {
+  position: relative;
+  float: left;
+  width: 25%;
+  margin: 10px;
+  border: 3px solid seagreen;
+}
+
+.right-panel {
+  position: relative;
+  float: right;
+  width: 60%;
+  margin: 10px;
+  border: 3px solid salmon;
+}
+
+.profile-info {
+  border: 3px solid blueviolet;
+}
+
+.profile-pic {
+  border: 3px solid orangered;
+  margin: 15px
+}
+
+.bio {
+  border: 3px solid skyblue;
+}
+
+.top-friends {
+  border: 3px solid yellowgreen;
+  margin: 0 0 5px 0;
+}
+
+.playlist {
+  border: 3px solid maroon;
+  margin: 25px;
+}
+
+.edgy-pics {
+  border: 3px solid purple;
+}
+
+.gen-content {
+  border: 3px solid indigo;
+  margin: 0 0 5px 0;
+}
