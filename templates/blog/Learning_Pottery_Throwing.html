@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block title %}Starting Pottery{% endblock %}
+{% block header %}Starting Pottery{% endblock %}
+{% block content %}
+<p><span>This year, Stephanie and I took it upon ourselves to start wheel-throwing classes at
+        a local pottery studio. We actually meant to do this last year, but life was a bit hectic, and we figured it
+        best to wait until after the holidays.</span></p>
+<p><span>Steph had experience making pottery in school, but this was almost entirely new for
+        me. At least, the wheel was. In sixth or seventh grade, I had the honor of working with clay in art class. I
+        pretty much hated it. It was messy, dried out my already dry hands, we were always using newspapers (which
+        gave me goosebumps when I touched them), and the class was only an hour. An hour did not seem like enough
+        time to get set up, do something meaningful, clean up, and go back to a desk afterwards. I made a fish (I
+        need a picture of that) &ndash; it was just a rectangular prism with some olive shaped eyes and a couple
+        fins slapped on, and a &lsquo;hand&rsquo;. It was incredibly rough, and the only good part was the thumb
+        &ndash; which the teacher did for me, and then complimented me on the following class.</span></p>
+<p><span>I&rsquo;ve been finding it incredibly fun. I had a suspicion I would really enjoy
+        working on a wheel, since it is very machine-like. The clay is spinning, and through applying pressure in
+        certain ways, I can influence the shape. Hand-sculpting seems intimidating, because the possibilities are
+        endless&ndash;having just a few options to choose from really helps not overwhelm me. In the first class, we
+        learned how to center clay, and shape that clay into a bowl. Centering is fun&ndash;you throw your clay at
+        the wheel roughly in the middle, throw some water on it, and start to
+        &lsquo;center&rsquo;. I am a total beginner so I&rsquo;m almost definitely saying things wrong here, but
+        this process alternates between two steps: Pushing in, and pushing down. You basically follow:</span></p>
+<ul>
+    <li><span>While not centered:</span></li>
+    <ul>
+        <li><span>If clay is sticky:</span></li>
+        <ul>
+            <li><span>Slop it up</span></li>
+        </ul>
+        <li><span>Push in (at the base)</span></li>
+        <li><span>If tall:</span></li>
+        <ul>
+            <li><span>Push down (at the top)</span></li>
+        </ul>
+    </ul>
+</ul>
+<p><span>This process is repeated until your clay exhibits circular symmetry. Depending on
+        what structure you will ultimately build, this can impact what shape you center into&ndash;but most
+        commonly, this appears to be a dome or cylinder.</span></p>
+<p><span></span></p>
+<p><span>Centering makes sense to me, although I am still struggling. Today I tried using 3
+        lbs of clay (previously 2.5 lbs was highest) and it is a bit less forgiving when centering. I keep running
+        into this issue where I start forming a hole in the center, and no matter how much I work it, it
+        doesn&rsquo;t seem to go away. My teacher called this &lsquo;volcano-ing&rsquo;, which seems
+        appropriate.</span></p>
+<p><span></span></p>
+<p><span>Then after centering, you do the gotdamn. For a bowl, the gotdamn is making the
+        center cavity. To do this, you take your two index fingies and pull towards yourself, until you get to
+        roughly the size you want. After this, you pull the walls up &ndash; for this step, you are creating height.
+        Because this is a bit more delicate, you slow down the wheel. For a bowl, the process follows:</span></p>
+<ul>
+    <li><span>While not done</span></li>
+    <ul>
+        <li><span>If clay is sticky:</span></li>
+        <ul>
+            <li><span>Conservatively slop it up</span></li>
+        </ul>
+        <ul>
+            <li><span>If not desired height:</span></li>
+            <ul>
+                <li><span>Pull walls up</span></li>
+            </ul>
+            <li><span>If desired height:</span></li>
+            <ul>
+                <li><span>Pull walls out</span></li>
+            </ul>
+            <li><span>Compress rim</span></li>
+            <li><span>Soak up excess moisture</span></li>
+        </ul>
+    </ul>
+</ul>
+<p><span>The process of pulling up involves applying pressure on the inside and outside wall
+        of your clay simultaneously. You do this while very slowly moving your hands up from the base to the top of
+        the clay, hence pulling up. Pulling in or out refers to varying the pressure applied, as opposed to an equal
+        pressure. Soaking up the moisture inside the bowl and compressing the rim helps for stability of your
+        structure.</span></p>
+<p><span>The first couple of times I did this, this process confused me. I forgot steps and
+        ended up trying to create a bowl from my initial cylinder/dome with one process&ndash;something like:</span>
+</p>
+<ul>
+    <li><span>While not done</span></li>
+    <ul>
+        <li><span>Slop it up</span></li>
+        <li><span>Make hole in thing</span></li>
+        <li><span>If not bowl:</span></li>
+        <ul>
+            <li><span>Pinch it kinda to slant the walls</span></li>
+        </ul>
+    </ul>
+</ul>
+<p><span>I was kinda confused as to why it wasn&rsquo;t really working, or why my bowl walls
+        were so thick but only an inch tall. Once I watched again and got some coaching though, I figured out the
+        actual process (I think, I still might be missing something). But I can make a bowl now at least!</span></p>
+<p><span></span></p>
+<p><span>I think the essence of what I want to say is how I view throwing, and why I like it.
+        I feel like I am a PID controller and my body is a nice robot. If hardware wasn&rsquo;t a limitation (haha),
+        I feel like I could program a robot to do this. Being able to think about it with such a straightforward set
+        of actions makes it easy to track my progress and experiment&ndash;what changes if I apply pressure in a
+        different place for a different length of time? I rarely find myself getting lost in activities, but this is
+        something I have fully lost myself in. That disconnect from life is really nice.</span></p>
+{% endblock %}
+{% block assets %}
+<img src="https://media.tenor.com/J4Z75u3Vv0UAAAAM/i-think-you-should-leave-tim-robinson.gif">
+<p>Everytime I throw water on the wheel, I think of this. I haven't even watched the show, either. I thought this quote was from the matrix.</p>
+<img src={{ url_for('static', filename='images/pottery/first_throw.png') }}>
+<p>My first attempt at throwing a bowl. It is short, wobbly, and I broke the center while trimming.</p>
+<img src={{ url_for('static', filename='images/pottery/second_throw.png') }}>
+<img src={{ url_for('static', filename='images/pottery/second_throw_1.png') }}>
+<img src={{ url_for('static', filename='images/pottery/second_throw_2.png') }}>
+<p>My second attempt at throwing a bowl! Still a bit oblong, but it is a bowl this time. I like that the glaze looks moldy.</p>
+{% endblock %}
