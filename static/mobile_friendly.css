@@ -3,7 +3,7 @@ body {
     color: #f8f8f2;
     font-size: 24px;
     margin: 3px;
-    font-family: 'Monaco';
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
 }
 
 h1 {
