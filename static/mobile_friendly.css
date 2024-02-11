@@ -2,7 +2,7 @@ body {
     background-color: #272822;
     color: #f8f8f2;
     font-size: 24px;
-    margin: 50px;
+    margin: 3px;
     font-family: 'Monaco';
 }
 
@@ -19,7 +19,7 @@ p {
 }
 
 .left-column, .right-column {
-    width: 80%; /* Defaulting to single column layout for mobile-first approach */
+    width: 100%;
 }
 
 .right-column {
