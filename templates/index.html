@@ -14,7 +14,7 @@
   <h2>Pages</h2>
   <ul>
   {% for post in page_posts %}
-    <li><a href="{{ url_for('pages', post_name=post) }}">{{ post.replace('_', ' ').split('.')[0] }}</a></li>
+    <li><a href="{{ url_for('page', post_name=post) }}">{{ post.replace('_', ' ').split('.')[0] }}</a></li>
   {% endfor %}
   </ul>
   <h2>Career</h2>

@@ -13,16 +13,16 @@ mail = Mail(app)
 
 def get_posts(category: str=None):
     current_directory = os.getcwd()
-    blog_directory = os.path.join(current_directory,'templates', category)
-    blog_posts = [f for f in os.listdir(blog_directory) if f.endswith('.html')]
-    return blog_posts
+    directory = os.path.join(current_directory,'templates', category)
+    posts = [f for f in os.listdir(directory) if f.endswith('.html')]
+    return posts
 
 @app.route('/')
 def home():
     blog_posts = get_posts('blog')
     career_posts = get_posts('career')
-    pages = get_posts('pages')
-    return render_template('index.html', blog_posts=blog_posts, career_posts=career_posts, page_posts=pages)
+    page_posts = get_posts('pages')
+    return render_template('index.html', blog_posts=blog_posts, career_posts=career_posts, page_posts=page_posts)
 
 @app.route('/blog/<post_name>')
 def blog_post(post_name):
