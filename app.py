@@ -12,7 +12,8 @@ to_email = os.environ.get('MY_EMAIL_ADDR')
 mail = Mail(app)
 
 def get_posts(category: str=None):
-    blog_directory = os.path.join('templates', category)
+    current_directory = os.getcwd()
+    blog_directory = os.path.join(current_directory,'templates', category)
     blog_posts = [f for f in os.listdir(blog_directory) if f.endswith('.html')]
     return blog_posts
 
