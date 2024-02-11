@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+
+
+  </head>
+  <body>
+    <div id="content"><h1>{% block header %}{% endblock %}</h1>
+      <div class="container">
+      <div class="left-column">{% block content %}{% endblock %}</div>
+      <div class="right-column">{% block assets %}{% endblock %}</div>
+    </div>
+    <br><br>
+    <div id="footer">
+      {% block footer %}
+      <a href="{{ url_for('home') }}">Return to Home</a>
+      {% endblock %}
+    </div>
+  </body>
+</html>
