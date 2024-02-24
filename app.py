@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, url_for, redirect
+from flask import Flask, render_template, request
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
@@ -44,6 +44,10 @@ def feedback():
         
         return '<div class="feedback-response">Your message was successfully sent. Thank you!! (✿❛‿❛✿)</div>'
     return render_template('feedback.html')
+
+@app.route('/modelviewer')
+def view_model():
+    return render_template('test.html')
 
 
 def send_email(content):
