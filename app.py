@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
@@ -16,6 +16,12 @@ def get_posts(category: str=None):
     directory = os.path.join(current_directory,'templates', category)
     posts = [f for f in os.listdir(directory) if f.endswith('.html')]
     return posts
+
+def get_objs():
+    current_directory = os.getcwd()
+    directory = os.path.join(current_directory, 'static', 'objects')
+    objs = [f for f in os.listdir(directory) if f.endswith('.obj')]
+    return objs
 
 @app.route('/')
 def home():
@@ -34,6 +40,8 @@ def career(post_name):
 
 @app.route('/pages/<post_name>')
 def page(post_name):
+    if post_name == '3d_landing.html':
+        return redirect(url_for('obj_landing'))
     return render_template(f'pages/{post_name}')
 
 @app.route('/feedback', methods=['GET', 'POST'])
@@ -44,6 +52,17 @@ def feedback():
         
         return '<div class="feedback-response">Your message was successfully sent. Thank you!! (✿❛‿❛✿)</div>'
     return render_template('feedback.html')
+
+@app.route('/3d_landing')
+def obj_landing():
+    objs = get_objs()
+    return render_template('pages/3d_landing.html', objs=objs)
+
+@app.route('/3d/<obj>')
+def obj_viewer(obj):
+    obj_name = obj.replace('_', ' ').split('.')[0]
+    mtl = obj.replace('.obj','.mtl')
+    return render_template('3d_template.html', obj=obj, obj_name=obj_name, mtl=mtl)
 
 @app.route('/modelviewer')
 def view_model():
