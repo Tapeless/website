@@ -1,13 +1,36 @@
 import os
+import boto3
 from flask import Flask, render_template, request, redirect, url_for
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
+
+
 
 app = Flask(__name__)
 
 sendgrid_key = os.environ.get('SENDGRID_KEY')
 from_email = os.environ.get('EMAIL_ADDR')
 to_email = os.environ.get('MY_EMAIL_ADDR')
+s3_key = os.environ.get('S3_KEY')
+s3_secret = os.environ.get('S3_SECRET')
+bucketname = os.environ.get('S3_BUCKET')
+
+s3 = boto3.client('s3', aws_access_key_id=s3_key, aws_secret_access_key=s3_secret)
+
+def get_site_files(s3, bucketname):
+    s3_objs = s3.list_objects(Bucket=bucketname)
+    for obj in s3_objs['Contents']:
+        print(obj)
+        if 'site/' in obj['Key']:
+            local_filename = obj['Key'].replace('site/', '', 1)
+            local_dir = os.path.dirname(local_filename)
+            if not os.path.exists(local_dir):
+                os.makedirs(local_dir)
+            s3.download_file(bucketname, obj['Key'], obj['Key'][5:])
+
+app.logger.info('getting site files...')
+# get_site_files(s3, bucketname)   
+app.logger.info('site files acquired!')
 
 mail = Mail(app)
 
