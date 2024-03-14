@@ -25,8 +25,8 @@ def calculate_file_md5(filename):
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
 
-def get_site_files(s3, bucketname, max_size_mb=10):
-    max_size_bytes = max_size_mb * 1024 * 1024  # Convert MB to bytes
+def get_site_files(s3, bucketname, max_size_mb=100):
+    max_size_bytes = max_size_mb * 1024 * 1024
     s3_objs = s3.list_objects_v2(Bucket=bucketname, Prefix='site/')
     
     if 'Contents' not in s3_objs:
@@ -34,7 +34,7 @@ def get_site_files(s3, bucketname, max_size_mb=10):
         return
     
     for obj in s3_objs['Contents']:
-        # Skip if file size is larger than 10MB
+        # Skip if file size is larger than 100MB
         if obj['Size'] > max_size_bytes:
             app.logger.info(f"Skipped {obj['Key']} due to size (> {max_size_mb}MB).")
             continue
